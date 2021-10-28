@@ -1,11 +1,11 @@
-class Planet{
+//Constructeur du soleil
+class Sun {
     
-    constructor(x, y, r, dist, img){
+    constructor(x, y, r, img){
           this.position = createVector(x, y); //vecteur position
-          this.origin = createVector(sun.position.x, sun.position.y); //origine du soleil
+          this.origin = createVector(x, y); //origine du soleil
           this.r = r; //rayon
           this.a = 0; //angle
-          this.dist = dist;
           this.img = img;
     }
 
@@ -21,11 +21,8 @@ class Planet{
 
       this.a = (this.a + Math.PI / 360);
       // POS soleil dépend de son origine + rota
-      this.position.x = this.origin.x + this.dist * Math.cos(this.a);
-      this.position.y = this.origin.y + this.dist * Math.sin(this.a);
+      this.position.x = this.origin.x + (width / 4) * Math.cos(this.a);
+      this.position.y = this.origin.y + (height / 4) * Math.sin(this.a);
 
     }
-    
-
 }
-

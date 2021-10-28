@@ -1,5 +1,5 @@
 let sun;
-let planets = [];
+let planet;
 let imgs = [];
 
 function preload(){
@@ -11,8 +11,9 @@ function preload(){
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    sun = new Planet(imgs[8],createVector(width/2,height/2),150);
     
+    sun = new Sun(width/2,height/2,150,imgs[8]);
+    planet = new Planet(width/2,height/2, 200, 500,imgs[2],)
 
 }
 
@@ -20,5 +21,7 @@ function draw() {
     background(0);
     sun.draw();
     sun.move();
-
+    planet.draw();
+    planet.move();
+    console.log(sun.position);
 }
