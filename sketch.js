@@ -2,7 +2,7 @@ let planet;
 let img;
 
 function preload(){
-    img = loadImage('planet.png');
+    img = loadImage('images/planet.png');
 }
 
 function setup() {
