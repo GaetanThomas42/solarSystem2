@@ -1,18 +1,24 @@
-let planet;
-let img;
+let sun;
+let planets = [];
+let imgs = [];
 
 function preload(){
-    img = loadImage('images/planet.png');
+    
+  for (var i = 0; i <= 8; i++) { //Boucle pour load images planétes
+    imgs.push(loadImage(`images/pl${i}.png`));
+  }
 }
 
 function setup() {
     createCanvas(innerWidth, innerHeight);
-    planet = new Planet(createVector(width/2,height/2),img);
+    sun = new Planet(imgs[8],createVector(width/2,height/2),150);
+    
 
 }
 
 function draw() {
-    
-    planet.draw();
+    background(0);
+    sun.draw();
+    sun.move();
 
 }
